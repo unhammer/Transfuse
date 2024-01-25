@@ -150,6 +150,7 @@ struct DOM {
 	xmlChars tags_inline; // Inline tags
 	xmlChars tags_parents_allow; // If set, only extract children of these tags
 	xmlChars tags_parents_direct; // Used for TTX <df>?
+	xmlChars tags_heading; // Tags where we want to insert end-of-heading marker "❡"
 	xmlChars tag_attrs; // Attributes that should also be extracted
 
 	DOM(State&, xmlDocPtr);

@@ -528,6 +528,9 @@ void DOM::extract_blocks(xmlString& s, xmlNodePtr dom, size_t rn, bool txt) {
 
 					stream->block_open(s, tmp_lxs[2]);
 					stream->block_body(s, tmp_lxs[1]);
+					if (!tags_heading.empty() && tags_heading.count(lname)) {
+						s += "❡";
+					}
 					stream->block_close(s, tmp_lxs[2]);
 
 					tmp_lxs[3] = XC(TFB_OPEN_B);
@@ -579,6 +582,9 @@ void DOM::extract_blocks(xmlString& s, xmlNodePtr dom, size_t rn, bool txt) {
 
 			stream->block_open(s, tmp_lxs[2]);
 			stream->block_body(s, tmp_lxs[1]);
+			if (!tags_heading.empty() && !tags_heading.count(lname)) {
+				s += "❡";
+			}
 			stream->block_close(s, tmp_lxs[2]);
 
 			tmp_lxs[3] = XC(TFB_OPEN_B);

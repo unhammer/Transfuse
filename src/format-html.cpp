@@ -138,6 +138,11 @@ std::unique_ptr<DOM> extract_html(State& state, std::unique_ptr<icu::UnicodeStri
 	dom->tags_raw = make_xmlChars("script", "style", "svg");
 	dom->tags_inline = make_xmlChars("a", "abbr", "acronym", "address", "b", "bdi", "bdo", "big", "del", "em", "font", "i", "ins", "kbd", "mark", "meter", "output", "q", "s", "samp", "small", "span", "strike", "strong", "sub", "sup", "time", "tt", "u", "var");
 	dom->tag_attrs = make_xmlChars("alt", "caption", "label", "summary", "title", "placeholder");
+	bool insert_heading_marker = true; // TODO cli arg?
+	if(insert_heading_marker) {
+		// For apertium -H (github issue#15):
+		dom->tags_heading = make_xmlChars("h1", "h2", "h3", "h4", "h5", "h6", "title");
+	}
 	dom->save_spaces();
 
 	auto styled = dom->save_styles(true);
