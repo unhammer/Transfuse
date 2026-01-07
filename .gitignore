@@ -7,3 +7,14 @@ Makefile
 *.out
 *.err
 *.bak
+/src/transfuse
+/src/tf-inject.1
+/src/tf-inject
+/src/tf-extract.1
+/src/tf-extract
+/src/tf-clean.1
+/src/tf-clean
+/.ccls-cache/
+/compile_commands.json
+/src/config.hpp
+/Testing/
